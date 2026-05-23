@@ -4,94 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obaidul Islam | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-green: #34d399;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
-            background-color: #f4f6f9;
-            color: #333;
+            line-height: 1.6;
         }
-        header {
-            background: #1f2937;
-            color: #fff;
-            padding: 40px 20px;
+        .hero {
             text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(180deg, #1e1b4b 0%, var(--bg-color) 100%);
         }
-        header h1 {
+        .hero h1 {
+            font-size: 3em;
             margin: 0;
-            font-size: 2.5em;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        header p {
-            margin: 5px 0 0;
-            color: #9ca3af;
-            font-size: 1.2em;
+        .hero p {
+            font-size: 1.3em;
+            color: var(--text-muted);
+            margin: 10px 0 0;
         }
         .container {
-            max-width: 800px;
-            margin: 30px auto;
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
-            background: #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-radius: 8px;
+        }
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
         }
         h2 {
-            color: #1f2937;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 1.5em;
+            color: var(--accent-blue);
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        ul {
-            padding-left: 20px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-        .contact-links a {
-            color: #2563eb;
+        .skill-card {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
+        }
+        .skill-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.1em;
+            color: var(--text-main);
+        }
+        .skill-card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95em;
+        }
+        .project-card {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            margin-top: 15px;
+        }
+        .project-card h3 {
+            margin: 0 0 10px 0;
+            color: var(--accent-green);
+        }
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .tag {
+            background: #1e293b;
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            border: 1px solid #334155;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            background: #0f172a;
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 8px;
             text-decoration: none;
-            margin-right: 15px;
-            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #334155;
+            transition: all 0.3s;
         }
-        .contact-links a:hover {
-            text-decoration: underline;
+        .social-btn:hover {
+            background: var(--accent-blue);
+            color: #0f172a;
+            transform: translateY(-2px);
         }
         footer {
             text-align: center;
-            padding: 20px;
-            color: #6b7280;
+            padding: 40px 20px;
+            color: var(--text-muted);
             font-size: 0.9em;
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <div class="hero">
         <h1>Obaidul Islam</h1>
-        <p>Statistics Researcher & Data Scientist</p>
-    </header>
+        <p>Statistics Researcher | Data Scientist</p>
+    </div>
 
     <div class="container">
-        <h2>🧠 About Me</h2>
-        <p>I am a Statistics graduate passionate about applying Data Science, Machine Learning, and Explainable AI (XAI) to solve real-world problems. My core interests lie in Public Health Data Analytics and Agricultural Technology (AgriTech) Solutions.</p>
+        
+        <section>
+            <h2><i class="fa-solid fa-user"></i> About Me</h2>
+            <p>I am an Honors graduate in Statistics with a keen focus on predictive modeling and Explainable Artificial Intelligence (XAI). I bridge the gap between complex statistical theories and practical machine learning architectures to build models that are not just accurate, but interpretable.</p>
+        </section>
 
-        <h2>🛠️ Technical Skills</h2>
-        <ul>
-            <li><strong>Programming & Analytics:</strong> Python, R, SPSS, LaTeX</li>
-            <li><strong>Machine Learning:</strong> Predictive Modeling, Ensemble Methods, Explainable AI (XAI)</li>
-            <li><strong>Research:</strong> Survey-Weighted Analysis, Statistical Modeling</li>
-        </ul>
+        <section>
+            <h2><i class="fa-solid fa-code"></i> Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Languages & Frameworks</h3>
+                    <p>Python, R, LaTeX</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Statistical Software</h3>
+                    <p>SPSS, Survey-Weighted Analysis</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Machine Learning & XAI</h3>
+                    <p>Random Forest, XGBoost, SVM, SHAP Analysis</p>
+                </div>
+            </div>
+        </section>
 
-        <h2>🎯 Current Focus</h2>
-        <p>Currently, I am focused on learning and building real-world ML projects while preparing for the IELTS examination for higher studies abroad.</p>
+        <section>
+            <h2><i class="fa-solid fa-flask"></i> Featured Research & Projects</h2>
+            <div class="project-card">
+                <h3>Socio-Economic Determinants of Healthcare Outcomes in Bangladesh</h3>
+                <p>A Survey-Weighted Analysis with Explainable AI utilizing public health survey data from 2022 to identify critical socio-economic healthcare drivers.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">XAI</span>
+                    <span class="tag">SHAP</span>
+                    <span class="tag">Public Health</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>AgriTech Automation Solutions</h3>
+                <p>Conceptualizing machine learning integrations for autonomous weeding robots and precision spray drones to combat agricultural labor shortages.</p>
+                <div class="tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">AgriTech</span>
+                    <span class="tag">Predictive Modeling</span>
+                </div>
+            </div>
+        </section>
 
-        <h2>📫 Connect With Me</h2>
-        <div class="contact-links">
-            <a href="mailto:obaidul0325@gmail.com">Email Me</a>
-            <a href="https://www.facebook.com/share/1CWMqnsvdE/" target="_blank">Facebook</a>
-            <a href="https://github.com/Obaidul-coder" target="_blank">GitHub Profile</a>
-        </div>
+        <section>
+            <h2><i class="fa-solid fa-bullseye"></i> Timeline & Academic Aspirations</h2>
+            <p>Following a successful thesis defense in April 2026, I am currently actively preparing for the IELTS examination. My goal is to secure a fully-funded scholarship for higher education opportunities at international universities for the 2027 intake.</p>
+        </section>
+
+        <section>
+            <h2><i class="fa-solid fa-envelope"></i> Connect Globally</h2>
+            <div class="social-links">
+                <a href="mailto:obaidul0325@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i> Email</a>
+                <a href="https://github.com/Obaidul-coder" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.facebook.com/share/1CWMqnsvdE/" target="_blank" class="social-btn"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            </div>
+        </section>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Obaidul Islam. All rights reserved.</p>
+        <p>&copy; 2026 Obaidul Islam. Crafted for Academic & Professional Excellence.</p>
     </footer>
 
 </body>
